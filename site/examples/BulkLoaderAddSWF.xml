@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		<!-- ASSETS -->
+		<addSWF>
+			<url>examples/swf/libraries/com.yourdomain.display.swf</url>
+		</addSWF>
+
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+	</bulkLoader>
+
+	<pause />
+
+	<!-- CHILDREN -->
+	<addChild>
+		<child class="com.yourdomain.display.Button">
+			<label>Hello World!</label>
+			<draw/>
+		</child>		
+	</addChild>
+</data>

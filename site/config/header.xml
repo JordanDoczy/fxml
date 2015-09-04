@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		
+		<!-- IMPORTS -->
+		<addSWF>swf/fonts/ITCAvantGardeStd.swf</addSWF>
+		<addSWF>swf/libraries/org.fxml.containers.swf</addSWF>
+		<addSWF>swf/libraries/org.fxml.handlers.swf</addSWF>
+		<addSWF>swf/libraries/org.fxml.managers.swf</addSWF>
+
+		<!--  ASSETS -->
+		<addCSS>
+			<url>css/styles.css</url>
+			<key>styleSheet</key>
+		</addCSS>
+		
+		
+		
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+		
+	</bulkLoader>
+
+	<pause />
+
+	
+	
+	<!-- CHILDREN -->
+	<addChild>
+		<child class="org.fxml.containers.Box">
+			<name>container</name>
+			<padding>8</padding>
+			<y>10</y>
+			<direction reference="org.fxml.containers.BoxDirection.HORIZONTAL" />
+			<addChild>
+				<child class="flash.display.Sprite">
+					<x>10</x>
+					<y>-10</y>
+					<width>172</width>
+					<height>206</height>
+					<addChild>
+						<child class="flash.text.TextField">
+							<height>206</height>
+							<width>172</width>
+							<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+							<wordWrap>true</wordWrap>
+							<htmlText><![CDATA[<a href="index.html"><img src="img/logo.png" width="172" height="206"/></a>]]></htmlText>
+						</child>
+					</addChild>
+				</child>
+			</addChild>
+			<addChild>
+				<child class="flash.display.Sprite">
+					<y>90</y>
+					<graphics readOnly="true">
+						<lineStyle>
+							<thickness>.5</thickness>
+							<color>0xFFFFFF</color>
+						</lineStyle>
+						<drawRect><x>0</x><y>-9</y><w>1</w><h>48</h></drawRect>
+					</graphics>
+					<addChild>
+						<child class="org.fxml.containers.Box">
+							<addChild>
+								<child class="flash.text.TextField">
+									<embedFonts>true</embedFonts>
+									<x>10</x>
+									<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+									<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+									<selectable>false</selectable>
+									<sharpness>100</sharpness>
+									<thickness>100</thickness>
+									<styleSheet instance="this.bulkLoader.styleSheet" />
+									<htmlText instance="this.title" />
+								</child>
+							</addChild>
+						</child>
+						
+					</addChild>
+				</child>
+			</addChild>
+		</child>
+	</addChild>
+	
+	<addChild>
+		<child class="org.fxml.containers.Box">
+			<name>navigation</name>
+			<direction reference="org.fxml.containers.BoxDirection.HORIZONTAL" />
+			<padding>5</padding>
+			<!-- about -->
+			<addChild>
+				<child class="flash.text.TextField">
+					<embedFonts>true</embedFonts>
+					<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+					<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+					<selectable>false</selectable>
+					<sharpness>50</sharpness>
+					<thickness>50</thickness>
+					<styleSheet instance="this.bulkLoader.styleSheet" />
+					<htmlText><![CDATA[<body><a href="index.html?config=config/about.xml">About</a></body>]]></htmlText>
+				</child>
+			</addChild>
+			
+			<!-- source -->
+			<addChild>
+				<child class="flash.text.TextField">
+					<embedFonts>true</embedFonts>
+					<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+					<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+					<selectable>false</selectable>
+					<sharpness>50</sharpness>
+					<thickness>50</thickness>
+					<styleSheet instance="this.bulkLoader.styleSheet" />
+					<htmlText><![CDATA[<body><a href="index.html?config=config/source.xml">Source</a></body>]]></htmlText>
+				</child>
+			</addChild>
+			
+			<!-- examples -->
+			<addChild>
+				<child class="flash.text.TextField">
+					<embedFonts>true</embedFonts>
+					<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+					<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+					<selectable>false</selectable>
+					<sharpness>50</sharpness>
+					<thickness>50</thickness>
+					<styleSheet instance="this.bulkLoader.styleSheet" />
+					<htmlText><![CDATA[<body><a href="index.html?config=config/examples.xml">Examples</a></body>]]></htmlText>
+				</child>
+			</addChild>
+			
+			<!-- documentation -->
+			<addChild>
+				<child class="flash.text.TextField">
+					<embedFonts>true</embedFonts>
+					<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+					<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+					<selectable>false</selectable>
+					<sharpness>50</sharpness>
+					<thickness>50</thickness>
+					<styleSheet instance="this.bulkLoader.styleSheet" />
+					<htmlText><![CDATA[<body><a href="documentation/" target="_blank">Documentation</a></body>]]></htmlText>
+				</child>
+			</addChild>
+			
+			<!-- contact -->
+			<addChild>
+				<child class="flash.text.TextField">
+					<embedFonts>true</embedFonts>
+					<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+					<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+					<selectable>false</selectable>
+					<sharpness>50</sharpness>
+					<thickness>50</thickness>
+					<styleSheet instance="this.bulkLoader.styleSheet" />
+					<htmlText><![CDATA[<body><a href="index.html?config=config/contact.xml">Contact</a></body>]]></htmlText>
+				</child>
+			</addChild>
+			
+			<addChild>
+				<child class="flash.display.Sprite">
+					<width>10</width>
+				</child>
+			</addChild>
+		</child>
+	</addChild>
+	
+	<!--  Managers -->
+	<alignManager class="org.fxml.managers.AlignManager">
+		<align>right</align>
+		<target instance="this.navigation" />
+	</alignManager>
+	
+	<!--  Handlers -->
+	<stageHandler class="org.fxml.handlers.StageResizeHandler">
+		<constructor>
+			<stage instance="this.stage" />
+			<callback>resize</callback>
+		</constructor>
+	</stageHandler>
+	
+</data>

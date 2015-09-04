@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	
+	<addChild>
+		<child class="flash.display.Sprite">
+			<name>container</name>
+			<addChild>
+				<child class="flash.text.TextField">
+					<name>textField</name>
+				</child>
+			</addChild>
+		</child>
+	</addChild>
+	
+	<textField instance="this.container.textField">
+		<text>Hello World again!</text>
+	</textField>
+	
+</data>
+
+

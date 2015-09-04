@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	
+	<textField class="flash.text.TextField">
+	</textField>
+	
+	<textField instance="this.textField">
+		<text>Hello World!</text>
+	</textField>
+	
+	<addChild>
+		<child instance="this.textField"></child>
+	</addChild>
+	
+</data>
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		<!-- ASSETS -->
+		<addImage>
+			<url>img/1-Ball.png</url>
+			<key>image1</key>
+		</addImage>
+		<addImage>
+			<url>img/2-Ball.png</url>
+			<key>image2</key>
+		</addImage>
+		<addImage>
+			<url>img/3-Ball.png</url>
+			<key>image3</key>
+		</addImage>
+
+		
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+	</bulkLoader>
+
+	<pause />
+
+	<!-- CHILDREN -->
+	<addChild>
+		<child instance="this.bulkLoader.image1">
+			<y>10</y>
+			<x>20</x>
+		</child>
+	</addChild>
+		<addChild>
+		<child instance="this.bulkLoader.image2">
+			<x>120</x>
+			<y>10</y>
+		</child>
+	</addChild>
+	<addChild>
+		<child instance="this.bulkLoader.image3">
+			<x>70</x>
+			<y>95</y>
+		</child>
+	</addChild>
+</data>

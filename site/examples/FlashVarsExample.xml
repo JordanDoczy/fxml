@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+
+	<addChild>
+		<child class="flash.text.TextField">
+			<autoSize>left</autoSize>
+			<text>configFile: </text>
+			<appendText>
+				<newText>flashvars.configFile</newText>
+			</appendText>
+		</child>
+	</addChild>
+	
+</data>

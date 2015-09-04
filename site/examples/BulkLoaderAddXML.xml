@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		<!-- ASSETS -->
+		<addXML>
+			<url>examples/xml/data.xml</url>
+			<key>data</key>
+		</addXML>
+
+		
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+	</bulkLoader>
+
+	<pause />
+
+	<!-- CHILDREN -->
+	<addChild>
+		<child class="flash.text.TextField">
+			<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+			<text instance="this.bulkLoader.data.person[0].name" />
+			<appendText>
+				<nextText><![CDATA[ is ]]></nextText>
+			</appendText>
+			<appendText>
+				<nextText instance="this.bulkLoader.data.person[0].age" />
+			</appendText>
+			<appendText>
+				<nextText><![CDATA[ years old.]]></nextText>
+			</appendText>
+		</child>
+	</addChild>
+	
+	<addChild>
+		<child class="flash.text.TextField">
+			<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+			<y>20</y>
+			<text instance="this.bulkLoader.data.person[1].name" />
+			<appendText>
+				<nextText><![CDATA[ is ]]></nextText>
+			</appendText>
+			<appendText>
+				<nextText instance="this.bulkLoader.data.person[1].age" />
+			</appendText>
+			<appendText>
+				<nextText><![CDATA[ years old.]]></nextText>
+			</appendText>
+		</child>
+	</addChild>
+</data>

@@ -1,0 +1,345 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 3. The Application.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 3. The Application.</h1>
+		</div>
+	
+		<div id="main">
+			<h2>In this example you will learn about some additional features of <code>org.fxml.Application</code> class</h2>
+			<div class="content">
+				The application class (<code>org.fxml.Application</code>), is the document class of the application. 
+				It is the entry point and is the top level <code>flash.display.Sprite</code>. 
+				Because <code>org.fxml.Application</code> extends <code>flash.display.Sprite</code>, any public properties or methods of <code>flash.display.Sprite</code> are available to you.
+				<br/><br/>
+				For full documentation please reference the <a href="documentation/org/fxml/Application.html" target="_blank">ASDocs</a>.
+				<br/><br/>
+				We will cover the following topics in this lesson:
+				<br/><br/>
+				<ul>
+					<li><a href="#this">this</a></li>
+					<li><a href="#addChild">addChild()</a></li>
+					<li><a href="#version">version</a></li>
+					<li><a href="#pause">pause()</a></li>
+					<li><a href="#resume">resume()</a></li>
+					<li><a href="#NestedApplication">Nested Application</a></li>
+				</ul>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="this"></a>
+			<h2><code>this</code></h2>
+			<div class="content">
+				In ActionScript the keyword "<code>this</code>" is defined as the following:
+				<span class="quote">
+					"A reference to a method's containing object. 
+					When a script executes, the <code>this</code> keyword references the object that contains the script.
+					Inside a method body, the <code>this</code> keyword references the class instance that contains the called method."
+				</span>
+				<br/><br/>
+				In FXML the <code>this</code> keyword is used as a reference to the <code>org.fxml.Application</code> object.
+				This allows access to the properties and methods on the <code>org.fxml.Application</code> object at any depth. This is important, for without the use
+				of the keyword <code>this</code>, the scope will default to the encompassing object. Properties and methods set between an object in FXML are referenced simliar to using 
+				the <code>with</code> keyword.
+				<br/><br/>
+				We will see more examples of this in the next two lessons.
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="addChild"></a>
+			<h2><code>addChild</code></h2>
+			<div class="content">
+				Now that you know how to call methods on the top level object, 
+				we will demonstrate how to call the most important method of all: <code>addChild</code>!
+			</div>
+			
+			<div class="container">
+				<span class="title"><code>addChild()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/HelloWorld-XML.png" />
+					<div class="right"><a href="examples/HelloWorld.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="HelloWorld" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'HelloWorld',
+									'bgcolor', '#c81b1b',
+									'name', 'HelloWorld',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/HelloWorld.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			<h2>Nested <code>addChild</code></h2>
+			<br/>
+			<div class="container">
+				<span class="title">Nested child example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/NestedChild-XML.png" />
+					<div class="right"><a href="examples/NestedChild.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id=NestedChild>
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'NestedChild',
+									'bgcolor', '#c81b1b',
+									'name', 'NestedChild',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/NestedChild.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="version"></a>
+			<h2><code>version</code></h2>
+			<div class="content">
+				Requesting the <code>version</code> will simply return the version associated with this build of the application. 
+				Version numbers are returned as "X.X.X.X" (major, minor, revision, build).
+			</div>
+			<div class="container">
+				<span class="title"><code>version</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Version-XML.png" />
+					<div class="right"><a href="examples/Version.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Version">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Version',
+									'bgcolor', '#c81b1b',
+									'name', 'Version',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Version.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="pause"></a>
+			<h2><code>pause()</code></h2>
+			<div class="content">
+				Calling the <code>pause</code> method will pause the FXML parser. 
+				Since FXML does a single-pass, calling pause will halt the application until the <code>resume</code> method is invoked.
+			</div>
+			
+			<a name="resume"></a>
+			<h2><code>resume()</code></h2>
+			<div class="content">
+				Calling the <code>resume</code> method resumes the FXML parser.
+				<br/>
+				<span class="note">Note: you can not directly call the <code>resume</code> method. It must be invoked as a handler from an event listener.</span>
+			</div>
+			<div class="container">
+				<span class="title"><code>pause()</code> and <code>resume()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/PauseAndResume-XML.png" />
+					<div class="right"><a href="examples/PauseAndResume.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="PauseAndResume">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '100',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'PauseAndResume',
+									'bgcolor', '#c81b1b',
+									'name', 'PauseAndResume',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/PauseAndResume.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+				<span class="note">Note: we will see more examples of <code>pause</code> and <code>resume</code> in future Lessons.</span>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="NestedApplication"></a>
+			<h2><code>Nested Application</code></h2>
+			<div class="content">
+				You can instantiate the <code>org.fxml.Application</code> class to include an application within an application! 
+				To do this you must pass in a configuration file path to the <code>constructor</code>.
+			</div>
+			<div class="container">
+				<span class="title">Nested Application example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/NestedApplication-XML.png" />
+					<div class="right"><a href="examples/NestedApplication.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="NestedApplication">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'NestedApplication',
+									'bgcolor', '#c81b1b',
+									'name', 'NestedApplication',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/NestedApplication.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+
+			<div class="content">
+				In this example, we have created a new <code>org.fxml.Application</code> passed in a configuration file to 
+				the <code>constructor</code> and added it to the stage. Since the class <code>org.fxml.Application</code> 
+				extends <code>flash.display.Sprite</code> we can add it as a child to the top level application using 
+				the <code>addChild</code> method.
+			</div>
+				
+			<div class="paging">
+				<a  href="Lesson4.html"><b>Lesson 4. The Instance Keyword.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+</body>
+</html>

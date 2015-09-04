@@ -1,0 +1,11 @@
+
+Linked Libraries
+ - Flex version 3.x (3.4 or higher recommended)
+
+ Classpath
+  - src
+  - interfaces
+
+ Build File (Main)
+ - src/org/fxml/Wrapper.as
+ 

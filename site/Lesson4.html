@@ -1,0 +1,183 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 4. The Instance Keyword.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 4. The Instance Keyword.</h1>
+		</div>
+	
+		<div id="main">
+			<h2>In this example you will learn about how to use the <code>instance</code> keyword.</h2>
+			<div class="spacer"></div>
+			
+			<h2><code>instance</code></h2>
+			<div class="content">
+				The <code>instance</code> keyword is used to retrieve an object that has already been created.
+			</div>
+			
+			<div class="container">
+				<span class="title"><code>instance</code> keyword example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Instance-XML.png" />
+					<div class="right"><a href="examples/Instance.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Instance">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Instance',
+									'bgcolor', '#c81b1b',
+									'name', 'Instance',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Instance.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				In the example above, we first create a <code>flash.text.TextField</code> object, 
+				then target it to set the <code>text</code> property on it, and finally we target it once more to add it to the <code>stage</code>.
+				<br/><br/>
+				<div class="note">
+					Note: When we target objects the <code>this</code> keyword is required.
+				</div>
+				<br/> 
+				This is because all top level objects and top level calls to <code>addChild</code> become properties of the <code>org.fxml.Application</code> object.
+				Compare the example above with the ActionScript 3 example below.
+				<br/>
+			</div>
+			
+			<div class="container">
+				<span class="title">The keyword <code>this</code> refers to the <code>org.fxml.Application</code> object.</span>
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/Instance-AS3.png" />
+				</div>
+			</div>
+			
+		
+			<div class="content">
+				The <code>instance</code> keyword can be used to target nested objects as well.
+			</div>
+			
+			<div class="container">
+				<span class="title">Nested instance example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/NestedInstance-XML.png" />
+					<div class="right"><a href="examples/NestedInstance.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="NestedInstance">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '20',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'NestedInstance',
+									'bgcolor', '#c81b1b',
+									'name', 'NestedInstance',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/NestedInstance.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				In the second example, we first create a <code>flash.display.Sprite</code> object, give it a name of "container", 
+				then create a <code>flash.text.TextField</code> object give it a name of "textField" and add it as a child to the "container". 
+				Finally, we target the <code>flash.text.TextField</code> using <i>dot notation</i> (<code>this.container.textField</code>) 
+				and set the <code>text</code> property to "Hello World again!". Note that in this example we targeted the elements by their 
+				<code>name</code> property. This is only possible for objects that extend <code>flash.display.DisplayObject</code> 
+				and have been added to the <code>stage</code>. All other objects must be referenced by the name of the XML node assigned 
+				to them (as in the first example).
+				<br/><br/>
+				<span class="note">
+					Note: It is important to note that targeting an object is only possible after the entire XML node has finished parsing.
+					This can be a hindrance and may cause you to alter the construction of your objects. 
+				</span>
+				<br/><br/>
+				Consider the Nested instance example above: During the construction of the <code>flash.text.TextField</code> we will not have 
+				access to the <code>flash.display.Sprite</code>. This is due to recursion. The parser will work from the inside out, 
+				which means that as it begins creating objects, it will finish the <code>flash.text.TextField</code> before it finishes the 
+				<code>flash.display.Sprite</code>. This means that the <code>flash.text.TextField</code> object can not access the 
+				<code>flash.display.Sprite</code> (it's <code>parent</code>) until the entire block has finished. This may take some time to 
+				get the hang of, however, when in doubt, create your objects independently of each other (as opposed to nested objects) and 
+				target them as top level objects to piece together your application.
+			</div>
+			
+			<div class="paging">
+				<a  href="Lesson5.html"><b>Lesson 5. The Function Keyword.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<loader class="flash.display.Loader">
+		<contentLoaderInfo readOnly="true">
+			<addEventListener>
+				<type reference="flash.events.Event.COMPLETE" />
+				<listener instance="this.resume" />
+			</addEventListener>
+		</contentLoaderInfo>
+		<load>
+			<request class="flash.net.URLRequest">
+				<url>examples/swf/libraries/com.yourdomain.display.swf</url>
+			</request>
+			<context class="flash.system.LoaderContext">
+				<checkPolicyFile>true</checkPolicyFile>
+				<applicationDomain reference="flash.system.ApplicationDomain.currentDomain" /> 
+			</context>
+		</load>
+	</loader>
+	
+	<pause />
+	
+	<addChild>
+		<child class="com.yourdomain.display.Button">
+			<x>10</x>
+			<y>10</y>
+			<label>Button Text</label>
+			<draw />
+		</child>
+	</addChild>
+	
+	<addChild>
+		<child class="com.yourdomain.display.RoundedCornerButton">
+			<x>100</x>
+			<y>10</y>
+			<label>Button Text</label>
+			<draw />
+		</child>
+	</addChild>
+</data>
+
+

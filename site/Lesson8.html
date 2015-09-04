@@ -1,0 +1,311 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 8. The BulkLoader.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+	
+	<div id="wrapper">
+
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 8. The BulkLoader.</h1>
+		</div>
+	
+		<div id="main">
+			<h2>In this example you will learn how to use the <code>org.fxml.loaders.BulkLoader</code></h2>
+			
+			<div class="content">
+				The <code>org.fxml.loaders.BulkLoader</code> class is included in the <code>org.fxml.Application.swf</code> 
+				which allows us to instantiate it without having to load in any other SWFs.
+				<br/><br/>
+				This class simplifies loading of basic assets so that they can easily be repurposed throughout the FXML code.
+				<br/><br/>
+				For full documentation please reference the <a href="documentation/org/fxml/loaders/BulkLoader.html" target="_blank">ASDocs</a>.
+				<br/><br/>
+				<ul>
+					<li><a href="#addImage">addImage()</a></li>
+					<li><a href="#addCSS">addCSS()</a></li>
+					<li><a href="#addXML">addXML()</a></li>
+					<li><a href="#addSWF">addSWF()</a></li>
+				</ul>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="addImage"></a>
+			<h2><code>addImage()</code></h2>
+			<br/>
+			<div class="container">
+				<span class="title"><code>addImage()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/BulkLoaderAddImage-XML.png" />
+					<div class="right"><a href="examples/BulkLoaderAddImage.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="BulkLoaderAddImage">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '200',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'BulkLoaderAddImage',
+									'bgcolor', '#c81b1b',
+									'name', 'BulkLoaderAddImage',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/BulkLoaderAddImage.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				Using the <code>addImage</code> method we add 3 images to the <code>org.fxml.loaders.BulLoader</code>. 
+				Before calling the <code>load</code> method we wire up an event listener using the <code>addEventListener</code> method. 
+				We set the handler to call to the <code>resume</code> method on the <code>org.fxml.Application</code> object. 
+				Immediately after the construction of the <code>org.fxml.loaders.BulkLaoder</code> the <code>pause</code> method is called on 
+				the <code>org.fxml.Application</code> object. This will cause the parser to stop until the <code>org.fxml.loaders.BulkLaoder</code>
+				dispatches the <code>flash.events.Event.COMPLETE</code> event and is handled by the <code>resume</code> method. 
+				Once that event fires and parsing resumes the <code>addChild</code> method is called 3 times on the 
+				<code>org.fxml.Application</code> object. Instead of creating new <code>flash.display.DisplayObjects</code>, we use the 
+				<code>instance</code> keyword to retrieve data from the <code>org.fxml.loaders.BulkLoader</code>. 
+				Referencing the property <b><code>this.bulkLoader.image1</code></b> returns a <code>flash.display.Bitmap</code> object, 
+				and can be used as an argument to the method <code>addChild</code>.
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="addCSS"></a>
+			<h2><code>addCSS()</code></h2>
+			<br/>
+			<div class="container">
+				<span class="title"><code>addCSS()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/BulkLoaderAddCSS-XML.png" />
+					<div class="right"><a href="examples/BulkLoaderAddCSS.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>CSS:</h3>
+					<img src="img/StyleSheet-CSS.png" />
+					<div class="right"><a href="examples/css/styles.css" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="BulkLoaderAddCSS">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '200',
+									'height', '50',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'BulkLoaderAddCSS',
+									'bgcolor', '#c81b1b',
+									'name', 'BulkLoaderAddCSS',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/BulkLoaderAddCSS.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				Using the <code>addCSS</code> method we add a style sheet to the <code>org.fxml.loaders.BulLoader</code>. 
+				See the <a href="#addImage"><code>addImage()</code></a> example for more information on the <code>addEventListener</code> and <code>load</code> methods. 
+				Once the <code>org.fxml.loaders.BulkLoader</code> has finished loading, a <code>flash.text.TextField</code> is created. 
+				We can target the style sheet and assign it to the <code>styleSheet</code> property on the <code>flash.text.TextField</code> 
+				using the following notation <b><code>this.bulkLoader.styleSheet</code></b>. 
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="addXML"></a>
+			<h2><code>addXML()</code></h2>
+			<br/>
+			<div class="container">
+				<span class="title"><code>addXML()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/BulkLoaderAddXML-XML.png" />
+					<div class="right"><a href="examples/BulkLoaderAddXML.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>XML Data:</h3>
+					<img src="img/Data-XML.png" />
+					<div class="right"><a href="examples/xml/data.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="BulkLoaderAddXML">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '200',
+									'height', '50',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'BulkLoaderAddXML',
+									'bgcolor', '#c81b1b',
+									'name', 'BulkLoaderAddXML',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/BulkLoaderAddXML.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				Using the <code>addXML</code> method we add XML to the <code>org.fxml.loaders.BulLoader</code>. 
+				See the <a href="addImage"><code>addImage()</code></a> example for more information on the <code>addEventListener</code> 
+				and <code>load</code> methods. Once the <code>org.fxml.loaders.BulkLoader</code> has finished loading, two 
+				<code>flash.text.TextFields</code> are created. We can target the XML data using dot notation 
+				(ex: <code>this.bulkLoader.data.person[0].name</code>).
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="addSWF"></a>
+			<h2><code>addSWF()</code></h2>
+			<br/>
+			<div class="container">
+				<span class="title"><code>addSWF()</code> example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/BulkLoaderAddSWF-XML.png" />
+					<div class="right"><a href="examples/BulkLoaderAddSWF.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="BulkLoaderAddSWF">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '200',
+									'height', '50',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'BulkLoaderAddSWF',
+									'bgcolor', '#c81b1b',
+									'name', 'BulkLoaderAddSWF',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/BulkLoaderAddSWF.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				Using the <code>addSWF</code> method we add a SWF to the <code>org.fxml.loaders.BulLoader</code>. 
+				See the <a href="addImage"><code>addImage()</code></a> example for more information on the <code>addEventListener</code> 
+				and <code>load</code> methods. Once the <code>org.fxml.loaders.BulkLoader</code> has finished loading, a 
+				<code>com.yourdomain.display.Button</code> is created, we then set the <code>label</code> property to "Hello World!", 
+				call the <code>draw</code> method and add it to the stage using the <code>addChild</code> method on the 
+				<code>org.fxml.Application</code> object. For more information on extending FXML with your own classes see 
+				<a href="Lesson7.html">Lesson 7. Extending FXML.</a>
+				<br/><br/>
+				<span class="note">
+					Note: When loading a library SWF such as in the example above a key is not needed when calling the <code>addSWF</code> method.
+				</span>
+				<br/><br/>	
+				This is because we do not need to retrieve the asset from the <code>org.fxml.loader.BulkLoader</code>, 
+				instead we only need to load the SWF so that we can instantiate the classes associated within it.
+				<br/><br/>
+				If you do pass in a <code>key</code> to the <code>addSWF</code> method and target the the asset from the 
+				<code>org.fxml.loaders.BulkLoader</code> (ex: <code>this.bulkLoader.myswf</code>) where "myswf" is the <code>key</code>, 
+				the <code>org.fxml.loaders.BulkLoader</code> will return a <code>flash.display.MovieClip</code>. 
+				While this approach is not recommended, it can be usefull for some legacy applications or simle timeline animations.
+			</div>
+
+			<div class="paging">
+				<a  href="Lesson9.html"><b>Lesson 9. Fonts.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

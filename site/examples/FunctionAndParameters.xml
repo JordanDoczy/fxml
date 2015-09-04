@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	
+	<addChild>
+		<child class="flash.text.TextField">
+			<name>textField1</name>
+			<text>Hello World!</text>
+		</child>
+	</addChild>
+	
+	<addChild>
+		<child class="flash.text.TextField">
+			<name>textField2</name>
+			<y>20</y>
+			<text function="this.textField1.getLineLength">
+				<lineIndex>0</lineIndex>
+			</text>
+		</child>
+	</addChild>
+	
+</data>
+
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	
+	<addChild>
+		<child class="flash.text.TextField">
+			<text>begin parsing</text>
+		</child>
+	</addChild>
+	
+	<addChild>
+		<child class="flash.display.Sprite">
+			<y>20</y>
+			<buttonMode>true</buttonMode>
+			<mouseChildren>false</mouseChildren>
+			<graphics readOnly="true">
+				<beginFill>0x000000</beginFill>
+				<drawRect><x>0</x><y>0</y><w>100</w><h>40</h></drawRect>
+				<endFill/>
+			</graphics>
+			<addChild>
+				<child class="flash.text.TextField">
+					<width>100</width>
+					<y>10</y>
+					<autoSize>center</autoSize>
+					<text>click</text>
+					<textColor>0xFFFFFF</textColor>
+				</child>
+			</addChild>
+			<addEventListener>
+				<event>click</event>
+				<delegate instance="this.resume" />
+			</addEventListener>
+		</child>
+	</addChild>
+
+	<pause />
+	
+	<addChild>
+		<child class="flash.text.TextField">
+			<y>65</y>
+			<text>end parsing</text>
+		</child>
+	</addChild>
+</data>
+
+

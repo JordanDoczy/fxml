@@ -1,0 +1,56 @@
+html, body { height: 100%; }
+h1, body { margin: 0px; padding: 0px; align:top; font-family: "Arial"; font-size: 12px; font-weight: normal;  }
+
+a { text-decoration: none; color:#c81b1b }
+a:hover { color: #c81b1b; text-decoration: underline; }
+
+h1 { font-size: 14px; font-weight: normal; margin: 0px; padding: 0px; }
+h2 { font-size: 12px; font-weight: bold; margin: 0px; padding: 0px; }
+h3 { font-size: 10px; font-weight: bold; margin: 0px; padding: 0px; }
+
+ul { margin-left:10px; padding-left: 10px; }
+
+* {margin:0;padding:0;} 
+
+
+#footer { height: 28px; background-color:#EDEDED; position: relative; margin-top: -28px; clear:both; }
+#footer div { text-align:center; color:#888888; padding-top:8px; font-size: 11px;}
+#header { width: 100%; height: 100px; background: #c81b1b; color: #ffffff;  }
+#header a { color: #ffffff; font-size: 11px; }
+#header a:hover { color: #ffffff; text-decoration: underline; font-size: 11px; }
+#header h1 { display: inline; align:middle; vertical-align:middle;  }
+#header img { padding-right: 10px; padding-top:10px; vertical-align:middle; }
+#main { overflow:auto; padding-bottom: 28px; padding-top: 10px; padding-left: 10px; }
+#wrapper { min-height: 100%; }
+
+.arrow { border: none; margin-right: 10px; margin-left: 5px; margin-bottom: 2px; vertical-align:middle;}
+.container { float: left; padding-left:10px;  }
+.container .title { font-size: 11px; }
+.content { padding:10px; clear:both; }
+.example { border: 1px solid #000000; padding:10px; margin-bottom: 5px; vertical-align:top; }
+.example .left { float:left; }
+.example div { margin-top: 10px;}
+.example img { margin-top: 10px; }
+.leftBorderWhite { border-left: 1px solid #FFFFFF; padding: 10px; vertical-align:top; }
+.small { font-size: 11px; }
+
+.note { font-size: 11px; font-weight:bold; }
+.paging { padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right:2px; clear:both; text-align: right; }
+.quote { font-style: italic;}
+.right {  text-align: right;}
+.spacer { padding:10px; clear:both;}
+
+
+/* -- fixes -- */
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+
+

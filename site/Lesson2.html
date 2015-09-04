@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 2. The Basics.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 2. The Basics.</h1>
+		</div>
+		
+		<div id="main">
+			
+			<h2>In this example you will learn the basics around how FXML works.</h2>
+			<div class="content">
+				<ul>
+					<li><a href="#InstantiateClass">Instantiating a class</a></li>
+					<li><a href="#SettingAProperty">Setting a property</a></li>
+					<li><a href="#CallingAMethod">Calling a method</a></li>
+					<li><a href="#ConstructorParameters">Constructor Parameters</a></li>
+				</ul>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="InstantiateClass"></a>
+			<h2>Instantiating a class</h2>
+			<div class="content">
+				Compare the two code samples below. Here you will see the differences in how to instantiate a class from AS3 to FXML. 
+				Note that the keyword <code>class</code> is used to replace the <code>new</code> operator. 
+				It is also important to note that the full class name must be supplied in order to instantiate the class properly.
+			</div>
+			
+			<div class="container">
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/InstantiateClass-AS3.png" />
+				</div>
+				<div class="example">
+					<h3>FXML:</h3><img src="img/InstantiateClass-XML.png" />
+					<div class="right"><a href="examples/InstantiateClass.xml" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="SettingAProperty"></a>
+			<h2>Setting a property</h2>
+			<div class="content">
+				Compare the two code samples below. Note that in FXML child nodes become part of the scope of their respective parent node. 
+				In this case anything between nodes <code>&lt;textField&gt;&lt;/textField&gt;</code> will be assigned to the <code>textField</code> object. 
+				For this example we have kept it simple to illustrate how to assign a property to an object. 
+				It is possible to assign more complex values including numbers, booleans, arrays and even complex object types! 
+				This will be demonstrated in later examples.
+			</div>
+			
+			<div class="container">
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/SetAProperty-AS3.png" />
+				</div>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/SetAProperty-XML.png" />
+					<div class="right"><a href="examples/SetAProperty.xml" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="CallingAMethod"></a>
+			<h2>Calling a method</h2>
+			<div class="content">
+				Compare the two code samples below. You can see that calling a method is quite simple. 
+				The main thing to keep in mind is that parameters for a method need to be wrapped with an XML node. 
+				While the name of the node is not restricted it is recommended that you use the name of the parameter declared in the function. 
+				In this case we have chosen to use "<code>newText</code>" as our parameter name since it matches that from the documentation of the method <code>appendText</code>. 
+				While this example only shows a single parameter, you can pass multiple parameters by supplying more nodes. 
+				The nodes must be sent in the same order the function expects them.
+			</div>
+			
+			<div class="container"> 
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/CallingAMethod-AS3.png" />
+				</div>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/CallingAMethod-XML.png" />
+					<div class="right"><a href="examples/CallingAMethod.xml" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="ConstructorParameters"></a>
+			<h2>Constructor Parameters</h2>
+			<div class="content">
+				Compare the two code samples below. 
+				The <code>flash.utils.Timer</code> class takes in two parameters into the <code>constructor</code>. 
+				To achieve this in FXML a special XML node labeled <code>constructor</code> will force the parameters to be passed into the <code>constructor</code>, 
+				just as if it were a method call.
+			</div>
+			<div class="container">
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/ConstructorParameters-AS3.png" />
+				</div>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/ConstructorParameters-XML.png" />
+					<div class="right"><a href="examples/ConstructorParameters.xml" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="paging">
+				<a  href="Lesson3.html"><b>Lesson 3. The Application.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

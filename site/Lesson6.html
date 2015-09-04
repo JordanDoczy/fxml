@@ -1,0 +1,279 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 6. More Keywords.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+	
+	<div id="wrapper">
+
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 6. More Keywords.</h1>
+		</div>
+		
+		<div id="main">
+			<h2>In this example you will learn about the remaining keywords that apply to FXML</h2>
+			<div class="content">
+				We will cover the following keywords:<br/><br/>
+				<ul>
+					<li><a href="#readOnly">readOnly</a></li>
+					<li><a href="#reference">reference</a></li>
+					<li><a href="#flashvars">flashvars</a></li>
+					<li><a href="#null">null</a></li>
+				</ul>
+			</div>
+			
+			<div class="spacer"></div>
+		
+			<a name="readOnly"></a><h2><code>readOnly</code></h2>
+			<div class="content">
+				The <code>readOnly</code> keyword is used to target a property on an object that has "read only" access.
+				By default FXML will attempt to assign a value to a property unless you explicitly assign the <code>readOnly</code> 
+				attribute to "<code>true</code>". 
+			</div>
+			
+			<div class="container">
+				<span class="title"><code>readOnly</code> keyword example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Graphics-XML.png" />
+					<div class="right"><a href="examples/Graphics.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Graphics" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '70',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Graphics',
+									'bgcolor', '#c81b1b',
+									'name', 'Graphics',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Graphics.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				In the example above we create a <code>flash.display.Sprite</code>, target the <code>graphics</code> property 
+				(using the <code>readOnly</code> property) and draw a black rectangle.
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="reference"></a><h2><code>reference</code></h2>
+			<div class="content">
+				The <code>reference</code> keyword is used to retrieve the value of a constant. 
+				It can also be used to return the type of complex object.
+			</div>
+		
+			<div class="container">
+				<span class="title"><code>reference</code> keyword example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Reference-XML.png" />
+					<div class="right"><a href="examples/Reference.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Reference" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '40',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Reference',
+									'bgcolor', '#c81b1b',
+									'name', 'Reference',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Reference.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				In the example above we create a <code>flash.text.TextField</code> object and assign the value of <code>Math.PI</code> 
+				to the <code>text</code> property.
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="flashvars"></a>
+			<h2><code>flashvars</code></h2>
+			<div class="content">
+				The <code>flashvars</code> keyword is used to retrieve the value of a flashvar passed in through the 
+				<code>&lt;object&gt;</code> / <code>&lt;embed&gt;</code> tags in the HTML.
+			</div>
+		
+			<div class="container">
+				<span class="title"><code>flashvars</code> keyword example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/FlashVarsExample-XML.png" />
+					<div class="right"><a href="examples/FlashVarsExample.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="FlashVarsExample" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '40',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'FlashVarsExample',
+									'bgcolor', '#c81b1b',
+									'name', 'FlashVarsExample',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/FlashVarsExample.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				In the example above we create a <code>flash.text.TextField</code> object assign the <code>text</code> property to 
+				"configFile: " and then call the <code>appendText</code> method passing the result of the flash variable "configFile" 
+				as the parameter.
+			</div>
+		
+			<div class="spacer"></div>
+		
+			<a name="null"></a><h2>
+			<code>null</code></h2>
+			<div class="content">
+				The <code>null</code> keyword is used to assign <code>null</code> values to objects.
+				<br/><br/>
+				<span class="note">Note: the value must match strict equality <code>===</code> as the string "null" in order for it to be converted to a <code>null</code> value.</span>
+			</div>
+			
+			<div class="container">
+				<span class="title"><code>null</code> keyword example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Null-XML.png" />
+					<div class="right"><a href="examples/Null.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Null" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '60',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Null',
+									'bgcolor', '#c81b1b',
+									'name', 'Null',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Null.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				In the example above we draw a black box and set the <code>hitArea</code> on the <code>flash.display.Sprite</code> 
+				to <code>null</code>. By doing so the <code>hitArea</code> will default to using the <code>flash.display.Sprite</code> 
+				itself.
+			</div>
+			
+			<div class="paging">
+				<a  href="Lesson7.html"><b>Lesson 7. Extending FXML.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

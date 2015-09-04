@@ -1,0 +1,27 @@
+
+body {
+    font-family: "ITCAvantGardeStd";
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.title {
+    font-family: "ITCAvantGardeStd";
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+h1{
+	font-family: "ITCAvantGardeStd";
+    font-size: 14px;
+    color: #ffffff;
+}
+
+a:hover {
+	color: #ff6666;
+	text-decoration: underline;
+}
+a {
+	text-decoration: underline;
+}

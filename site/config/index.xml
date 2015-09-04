@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+	<addChild>
+		<child class="org.fxml.Application">
+			<constructor>
+				<configFile>config/header.xml</configFile>
+			</constructor>
+			<name>header</name>
+			<title><![CDATA[<body><span class="title">Welcome to FXML.</span></body>]]></title>
+		</child>
+	</addChild>
+	
+</data>

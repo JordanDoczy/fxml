@@ -1,0 +1,239 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 7. Extending FXML.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+	
+	<div id="wrapper">
+
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 7. Extending FXML.</h1>
+		</div>
+		
+		<div id="main">
+			
+			<h2>In this example you will learn how to extend FXML to support your own classes.</h2>
+			<div class="content">
+				Until now, with the exception of the class <code>org.fxml.Application</code>, we have only seen how to use 
+				classes that exist within the flash namespace. In this lesson we will explore how to instantiate classes you 
+				generate with ActionScript 3 in FXML!
+				<br/><br/>
+				In ActionScript 3, to incorporate our classes into an executable (SWF), the <code>import</code> statement is used. 
+				This alerts the compiler to include the necessary classes at compile time so that we can instantiate an object from 
+				that namespace.
+				<br/><br/>
+				In FXML, the approach is slightly different.
+				<br/><br/>
+				For starters, there is no <code>import</code> keyword. Since FXML is a run-time solution (as opposed to compile-time), 
+				you'll need to load in your classes via a SWF that contains the classes you wish to instantiate. 
+				Let's explore what this entails.
+			</div>
+		
+			<div class="spacer"></div>
+		
+			<h2>Step 1: Writing the ActionScript 3</h2>
+			<div class="content">
+				We'll start off by writing some ActionScript 3 code. 
+				Take the following as two classes that you would like to instantiate in FMXL.
+			</div>
+			
+			<div class="container">
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/Button-AS3.png" />
+					<div class="right"><a href="examples/src/com/yourdomain/display/Button.as" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/RoundedCornerButton-AS3.png" />
+					<div class="right"><a href="examples/src/com/yourdomain/display/RoundedCornerButton.as" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="content">
+				Now before we go any further - let's see what a typical ActionScript 3 instantiation would look like.
+			</div>
+		
+			<div class="container">
+				<div class="example">
+						<h3>AS3:</h3>
+						<img src="img/ButtonMain-AS3.png" />
+						<div class="right"><a href="examples/src/com/yourdomain/ButtonMain.as" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>AS3 Result:</h3>
+					<div id="ButtonMain" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '70',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'ButtonMain',
+									'bgcolor', '#c81b1b',
+									'name', 'ButtonMain',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'examples/swf/com.yourdomain.ButtonMain',
+									'salign', 'lT'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+		
+			<div class="content">
+				OK, now let's see how we can implement <code>com.yourdomain.display.Button</code> and 
+				<code>com.yourdomain.display.RoundedCornerButton</code> through FXML.
+			</div>
+		
+			<div class="spacer"></div>
+			
+			<h2>Step 2: Creating the Package</h2>
+			<div class="content">
+				Since FXML requires these classes to be loaded in as a SWF, we'll need to create a class that will compile them. 
+				To do this we create a <code>Package.as</code> file.
+				<br/><br/>
+				First let's take a look at our package directory:
+			</div>
+		
+			<div class="container">
+				<div class="example">
+					<img src="img/ButtonPackage.png" />
+				</div>
+			</div>
+			
+			<div class="content">
+				And now the <code>Package.as</code> file:
+			</div>
+			<div class="container">
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/ButtonPackage-AS3.png" />
+					<div class="right"><a href="examples/src/com/yourdomain/display/Package.as" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="content">
+				This file must extend <code>flash.display.Sprite</code> otherwise it will throw an error once it is loaded into FXML. 
+				The purpose of this class is simply to create a reference to the classes we wish to compile so that they will be bundled 
+				into one SWF. While there are many strategies to take here the recommended solution is to create one <code>Package.as</code> 
+				file per package. Meaning that at each package there is a file called <code>Package.as</code> that contains a reference 
+				to each class in that package. It is also recommended that the name of the SWF produced by the <code>Package.as</code> 
+				file mimics the package name. For example, in our case, our package file has the following address 
+				<code>com.yourdomain.display.Package</code> and should produce a SWF called "com.yourdomain.display.swf". 
+				This will help keep your libraries organized and will produce the lease amount of overlap.
+				<br/><br/>
+				<span class="note">
+					Note: it is extremely important to keep your packages decoupled from one another.
+				</span>
+				<br/><br/>
+				If you have classes that cross-reference between packages you run the risk of having an out of date class file. 
+				For example if package A produces SWF "a.swf" and contains class A, and package B produces SWF "b.swf" but also includes class A, 
+				you have now loaded class A twice! It is recommended that interfaces tie classes together between packages. 
+				While this can still lead to interdependencies, it leads to much cleaner code and has much less chance of causing code 
+				conflicts.
+				<br/><br/>
+				OK, now that we have created our classes, created a package file, and compiled them in a SWF, we can use them in FXML!
+			</div>
+		
+			<div class="spacer"></div>
+			
+			<h2>Step 3: Loading the SWF</h2>
+			<div class="content">
+				As mentioned, instead of using the <code>import</code> statement, FXML requires a SWF to be loaded. 
+				The following example will demonstrate how to load in a SWF.
+			</div>
+			<div class="container">
+				<span class="title">Extending FXML example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/ButtonExample-XML.png" />
+					<div class="right"><a href="examples/ExtendingFXML.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="ExtendingFXML" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '70',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'ExtendingFXML',
+									'bgcolor', '#c81b1b',
+									'name', 'ExtendingFXML',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/ExtendingFXML.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+		
+			<div class="content">
+				As you can see from the example above, a simple <code>flash.display.Loader</code> is used to load the SWF. 
+				Using the <code>pause</code> method we halt application from parsing the remaining objects until the SWF has finished 
+				loading. Once the load has completed, the parsing resumes and we can instantiate the classes 
+				<code>com.yourdomain.display.Button</code> and <code>com.yourdomain.display.RoundedCornerButton</code>.
+				<br/><br/>
+				Now you might say that this seems like a lot of work to set up a <code>flash.display.Loader</code> to load in every SWF 
+				and, well, you're right! In the next lesson we will demonstrate the use of the <code>org.fxml.loaders.BulkLoader</code> 
+				class which greatly reduces the amount of code you'll need to write to import your own classes into FXML.
+			</div>
+			
+			<div class="paging">
+				<a  href="Lesson8.html"><b>Lesson 8. The BulkLoader.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

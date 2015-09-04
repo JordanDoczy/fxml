@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		<!-- ASSETS -->
+		<addSWF>
+			<url>examples/swf/fonts/Arial.swf</url>
+		</addSWF>
+		
+		<addCSS>
+			<url>examples/css/styles.css</url>
+			<key>styleSheet</key>
+		</addCSS>
+
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+	</bulkLoader>
+
+	<pause/>
+
+	<addChild>
+		<child class="flash.text.TextField">
+			<embedFonts>true</embedFonts>
+			<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+			<styleSheet instance="this.bulkLoader.styleSheet"/>
+			<htmlText><span class="title">Hello World!</span></htmlText>
+		</child> 
+	</addChild>
+</data>
+
+

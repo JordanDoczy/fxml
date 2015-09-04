@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	<addChild>
+		<child class="flash.display.Sprite">
+			<name>square</name>
+			<hitArea>null</hitArea>
+			<buttonMode>true</buttonMode>
+			<graphics readOnly="true">
+				<beginFill>0x000000</beginFill>
+				<drawRect>
+					<x>0</x>
+					<y>0</y>
+					<w>50</w>
+					<h>50</h>
+				</drawRect>
+				<endFill />
+			</graphics>
+		</child>
+	</addChild>	
+</data>
+
+

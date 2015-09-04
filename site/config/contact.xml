@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	
+	<!-- CHILDREN -->
+	<addChild>
+		<child class="org.fxml.Application">
+			<constructor>
+				<configFile>config/header.xml</configFile>
+			</constructor>
+			<name>header</name>
+			<title><![CDATA[<body><span class="title">Contact FXML.</span></body>]]></title>
+		</child>
+	</addChild>
+	
+	<header instance="header">
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+	</header>
+	
+	<pause />
+	
+	<!-- Body Copy -->
+	<addChild>
+		<child class="flash.text.TextField">
+			<y>230</y>
+			<x>10</x>
+			<embedFonts>true</embedFonts>
+			<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+			<antiAliasType reference="flash.text.AntiAliasType.ADVANCED" />
+			<multiline>true</multiline>
+			<selectable>false</selectable>
+			<sharpness>50</sharpness>
+			<thickness>50</thickness>
+			<wordWrap>true</wordWrap>
+			<width>550</width>
+			<styleSheet instance="this.header.bulkLoader.styleSheet"/>
+			<htmlText><![CDATA[<body>Please email <a href="mailto:info@fxml.org?subject=FXML Inquiry">info@fxml.org</a> with any inquiries.</body>]]></htmlText>
+		</child>
+	</addChild>
+	
+</data>

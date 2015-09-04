@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+	<textField class="flash.text.TextField">
+		<text>Hello World!</text>
+		<appendText>
+			<newText>Hello World again!</newText>
+		</appendText>
+	</textField>
+</data>
+
+

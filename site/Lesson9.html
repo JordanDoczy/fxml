@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 9. Fonts.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+<script src="js/js_functions.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+<body>
+	
+	<div id="wrapper">
+	
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 9. Fonts.</h1>
+		</div>
+		
+		<div id="main">
+			
+			<h2>In this example you will learn how to load and use fonts.</h2>
+			<div class="content">
+				We will cover the following topics:
+				<br/><br/>
+				<ul>
+					<li><a href="#AS3">Creating the ActionScript 3</a></li>
+					<li><a href="#NamingConventions">Naming Conventions</a></li>
+					<li><a href="#FXML">Creating FXML</a></li>
+					<li><a href="#Stylesheet">Style sheets</a></li>
+				</ul>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="AS3"></a>
+			<h2>Step 1. Create the ActionScript 3</h2>
+			<br/>
+			<div class="container">
+				<span class="title">A simple class that registers two fonts (Arial normal and Arial bold).</span>
+				<div class="example">
+					<h3>AS3:</h3>
+					<img src="img/Arial-AS3.png" />
+					<div class="right"><a href="examples/fonts/Arial.as" target="_blank">source</a></div>
+				</div>
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="NamingConventions"></a>
+			<h2>Step 2. Naming Conventions</h2>
+			<div class="content">
+				In the example above we created a class that registered two fonts. Take note of the <code>[Embed()]</code> tag. 
+				For this example we chose to use the property <code>fontFamily</code>. This is much preferred over the property 
+				<code>fontName</code>. <code>fontFamily</code> allows us to assign multiple fonts under one name, in this case "Arial" 
+				and distinguish them by applying font properties such as weight or italics. By using <code>fontFamily</code> we can 
+				create a style sheet that uses a <code>fontFamily</code> of Arial. We can also apply a <code>font-weight: bold;</code> 
+				property to use the now embedded bold type. It is recommended that you compile the above ActionScript 3 into a swf 
+				that matches the font name (in this case "Arial.swf" is preferred). This will help avoid confusion when using the font.
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="FXML"></a>
+			<h2>Step 3. Create the FXML</h2>
+			<br/>
+			<div class="container">
+				<span class="title">Font example.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/Font-XML.png" />
+					<div class="right"><a href="examples/Font.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="Font" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '40',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'Font',
+									'bgcolor', '#c81b1b',
+									'name', 'Font',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/Font.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content">
+				First we load the swf "Arial.swf". By loading the font it is already registered since we called the 
+				<code>Font.registerFont()</code> in the ActionScript 3. Once the <code>org.fxml.loaders.BulkLoader</code> completes 
+				the loading, we can simply use the font by creating a <code>flash.text.TextField</code> object, setting the 
+				<code>embedFonts</code> equal to <code>true</code> and then setting the <code>font</code> property to "Arial" 
+				on the <code>defaultTextFormat</code> object on the <code>flash.text.TextField</code>!
+			</div>
+			
+			<div class="spacer"></div>
+			
+			<a name="Stylesheet"></a>
+			<h2>Step 4. Using Stylesheets</h2>
+			<div class="content">
+				We saw how to add CSS with the <code>org.fxml.loader.BulkLoader</code> in the previous lesson 
+				<a href="Lesson8.html#addCSS">Lesson 8. The BulkLoader.</a> Now let's look at how we can combine 
+				a style sheet with a font SWF.
+			</div>
+		
+			<div class="container">
+				<span class="title">In this example we set the <code>embedFonts</code> property to <code>true</code> and target the <code>.title</code> 
+				class from the styleSheet.</span>
+				<div class="example">
+					<h3>FXML:</h3>
+					<img src="img/FontWithCSS-XML.png" />
+					<div class="right"><a href="examples/FontWithCSS.xml" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>CSS:</h3>
+					<img src="img/StyleSheet-CSS.png" />
+					<div class="right"><a href="examples/css/styles.css" target="_blank">source</a></div>
+				</div>
+				<div class="example">
+					<h3>FXML Result:</h3>
+					<div id="FontWithCSS" class="application">
+						<script language="javascript">
+							if (AC_FL_RunContent == 0) {
+								alert("This page requires AC_RunActiveContent.js.");
+							} else {
+								AC_FL_RunContent(
+									'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+									'src', 'swf/org.fxml.Application',
+									'width', '100%',
+									'height', '50',
+									'quality', 'high',
+									'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+									'align', 'middle',
+									'play', 'true',
+									'loop', 'true',
+									'scale', 'noScale',
+									'wmode', 'transparent',
+									'devicefont', 'false',
+									'id', 'FontWithCSS',
+									'bgcolor', '#c81b1b',
+									'name', 'FontWithCSS',
+									'menu', 'true',
+									'allowFullScreen', 'false',
+									'allowScriptAccess','sameDomain',
+									'movie', 'swf/org.fxml.Application',
+									'salign', 'lT',
+									'flashVars', 'id=fxm/l&configFile=examples/FontWithCSS.xml'
+									); //end AC code
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="spacer"></div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>

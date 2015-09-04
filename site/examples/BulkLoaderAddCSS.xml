@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- org.fxml.Application -->
+<data>
+
+	<bulkLoader class="org.fxml.loaders.BulkLoader">
+		<!-- ASSETS -->
+		<addCSS>
+			<url>examples/css/styles.css</url>
+			<key>styleSheet</key>
+		</addCSS>
+
+		
+		<addEventListener>
+			<type reference="flash.events.Event.COMPLETE" />
+			<listener instance="this.resume" />
+		</addEventListener>
+		<load />
+	</bulkLoader>
+
+	<pause />
+
+	<!-- CHILDREN -->
+	<addChild>
+		<child class="flash.text.TextField">
+			<autoSize reference="flash.text.TextFieldAutoSize.LEFT" />
+			<styleSheet instance="this.bulkLoader.styleSheet"/>
+			<htmlText><span class="text">Hello World!</span></htmlText>
+		</child> 
+	</addChild>
+</data>

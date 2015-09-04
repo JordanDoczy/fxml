@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 1. Getting Started.</title>
+<link rel="stylesheet" type="text/css" href="css/site.css" />
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="js/AC_RunActiveContent.js" language="javascript"></script>
+
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrapper {display:table;height:100%}
+	</style>
+<![endif]-->
+
+</head>
+
+
+<body>
+	<div id="wrapper">
+		
+		<div id="header">
+			<img src="img/logo-small.png" alt="logo" />
+			<h1 class="leftBorderWhite">Lesson 1. Getting Started.</h1>
+		</div>
+	
+		<div id="main">
+				<h2>What is FXML?</h2>
+				<div class="content">
+					FXML stands for Flash XML. Similar to MXML, FXML is mark-up for the ActionScript 3 language. 
+					While they are many differences between the two, the main feature of FXML is that it is a runtime execution of the mark-up. 
+					While MXML requires your to recompile your code, FXML simply parses the XML at runtime to produce new objects on the fly!
+				</div>
+				
+				<h2>How to work with FXML.</h2>
+				<div class="content">
+					FXML is a runtime application executed from the file: <code>org.fxml.Application.swf</code>.<br/>
+					The application relies on an XML configuration file to be passed in via flashvars as the variable <b><code>configFile</code></b>.<br/>  
+					Flash 9 and 10 builds are available through the <a href="http://code.google.com/p/fxml/source/checkout">google code</a>.
+				</div>
+				
+				<h2>FXML Example</h2>
+				<div class="content">
+					The following is an FXML example, future lessons will describe the syntax in detail.
+				</div>
+				
+				<div class="container">
+					<span class="title">Hello World example.</span>
+					<div class="example">
+						<h3>FXML:</h3>
+						<img src="img/HelloWorld-XML.png" />
+						<div class="right"><a href="examples/HelloWorld.xml" target="_blank">source</a></div>
+					</div>
+					<div class="example">
+						<h3>FXML Result:</h3>
+						<div id="HelloWorld" class="application">
+							<script language="javascript">
+								if (AC_FL_RunContent == 0) {
+									alert("This page requires AC_RunActiveContent.js.");
+								} else {
+									AC_FL_RunContent(
+										'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0',
+										'src', 'swf/org.fxml.Application',
+										'width', '100%',
+										'height', '20',
+										'quality', 'high',
+										'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+										'align', 'middle',
+										'play', 'true',
+										'loop', 'true',
+										'scale', 'noScale',
+										'wmode', 'transparent',
+										'devicefont', 'false',
+										'id', 'HelloWorld',
+										'bgcolor', '#c81b1b',
+										'name', 'HelloWorld',
+										'menu', 'true',
+										'allowFullScreen', 'false',
+										'allowScriptAccess','sameDomain',
+										'movie', 'swf/org.fxml.Application',
+										'salign', 'lT',
+										'flashVars', 'id=fxm/l&configFile=examples/HelloWorld.xml'
+										); //end AC code
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+				
+				<div class="paging">
+					<a  href="Lesson2.html"><b>Lesson 2. The Basics.</b> <img class="arrow" src="img/arrow.jpg" /></a>
+				</div>
+			</div>
+	</div>
+	
+	<div id="footer">
+		<div>FXML is an open source project and is not affiliated with Adobe.</div>
+	</div>
+	
+</body>
+</html>
