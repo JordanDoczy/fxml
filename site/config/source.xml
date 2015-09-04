@@ -36,7 +36,7 @@
 			<wordWrap>true</wordWrap>
 			<width>550</width>
 			<styleSheet instance="this.header.bulkLoader.styleSheet"/>
-			<htmlText><![CDATA[<body>The source can be found on <a href="http://code.google.com/p/fxml/source/checkout" target="_blank">google code</a>.</body>]]></htmlText>
+			<htmlText><![CDATA[<body>The source can be found on <a href="https://github.com/JordanDoczy/fxml.git" target="_blank">git hub</a>.</body>]]></htmlText>
 		</child>
 	</addChild>
 	
